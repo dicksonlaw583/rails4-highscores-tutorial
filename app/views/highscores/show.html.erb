@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @highscore.name %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @highscore.score %>
+</p>
+
+<%= link_to 'Edit', edit_highscore_path(@highscore) %> |
+<%= link_to 'Back', highscores_path %>
