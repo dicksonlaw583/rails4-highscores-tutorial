@@ -15,6 +15,10 @@ class HighscoresController < ApplicationController
   # GET /highscores/new
   def new
     @highscore = Highscore.new
+    
+  	respond_to do |format|
+  	  format.json { render json: [form_authenticity_token] }
+  	end
   end
 
   # GET /highscores/1/edit
