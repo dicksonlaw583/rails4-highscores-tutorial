@@ -1,5 +1,5 @@
 class HighscoresController < ApplicationController
-  before_action :set_highscore, only: [:show, :edit, :update, :destroy]
+  # before_action :set_highscore, only: [:show, :edit, :update, :destroy]
 
   # GET /highscores
   # GET /highscores.json
@@ -9,8 +9,8 @@ class HighscoresController < ApplicationController
 
   # GET /highscores/1
   # GET /highscores/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /highscores/new
   def new
@@ -18,8 +18,8 @@ class HighscoresController < ApplicationController
   end
 
   # GET /highscores/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /highscores
   # POST /highscores.json
@@ -28,10 +28,10 @@ class HighscoresController < ApplicationController
 
     respond_to do |format|
       if @highscore.save
-        format.html { redirect_to @highscore, notice: 'Highscore was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @highscore }
+        # format.html { redirect_to @highscore, notice: 'Highscore was successfully created.' }
+        format.json { render json: @highscore, status: :created }
       else
-        format.html { render action: 'new' }
+        # format.html { render action: 'new' }
         format.json { render json: @highscore.errors, status: :unprocessable_entity }
       end
     end
@@ -39,33 +39,33 @@ class HighscoresController < ApplicationController
 
   # PATCH/PUT /highscores/1
   # PATCH/PUT /highscores/1.json
-  def update
-    respond_to do |format|
-      if @highscore.update(highscore_params)
-        format.html { redirect_to @highscore, notice: 'Highscore was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @highscore.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @highscore.update(highscore_params)
+  #       format.html { redirect_to @highscore, notice: 'Highscore was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: 'edit' }
+  #       format.json { render json: @highscore.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /highscores/1
   # DELETE /highscores/1.json
-  def destroy
-    @highscore.destroy
-    respond_to do |format|
-      format.html { redirect_to highscores_url }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @highscore.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to highscores_url }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_highscore
-      @highscore = Highscore.find(params[:id])
-    end
+    # def set_highscore
+    #   @highscore = Highscore.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def highscore_params
