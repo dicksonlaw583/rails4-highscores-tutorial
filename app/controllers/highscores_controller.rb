@@ -4,7 +4,7 @@ class HighscoresController < ApplicationController
   # GET /highscores
   # GET /highscores.json
   def index
-    @highscores = Highscore.all
+    @highscores = Highscore.top(10)
   end
 
   # GET /highscores/1
